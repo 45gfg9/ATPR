@@ -1,0 +1,7 @@
+/.vscode
+
+/build
+
+# in case if some files escaped from /build
+*.o
+*.elf
