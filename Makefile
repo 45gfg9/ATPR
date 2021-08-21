@@ -1,19 +1,26 @@
-MCU = atmega16 # or atmega32
+# atmega16 or atmega32
+MCU = atmega16
 F_CPU = 12000000L
 
+# source dirs
 VPATH = src v-usb/usbdrv
 
+# include dirs
 LIBPATH = include v-usb/usbdrv
 
+# compilers
 CC = avr-gcc
 CXX = avr-g++
 
+# preprocess & compile flags
 CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU)
 CFLAGS = -mmcu=$(MCU) -Wall -Os
 
+# outputs
 OUT_DIR = build
 TARGET = ATPR.elf
 
+# sources
 SRC_EXT = cpp|c|S
 OBJECTS = $(shell find $(VPATH) | sed -rn 's/.+\/(.+)\.($(SRC_EXT))$$/$(OUT_DIR)\/\1.o/p')
 
