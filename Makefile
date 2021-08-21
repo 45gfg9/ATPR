@@ -17,6 +17,7 @@ SRC_EXT = cpp|c|S
 OBJECTS = $(shell find $(VPATH) | sed -rn 's/.+\/(.+)\.($(SRC_EXT))$$/$(OUT_DIR)\/\1.o/p')
 
 build: mkdir $(OUT_DIR)/main.elf
+	avr-size --mcu=$(MCU) -C $(OUT_DIR)/main.elf
 
 mkdir:
 	@mkdir -p $(OUT_DIR)
@@ -39,7 +40,7 @@ help:
 	@echo
 	@echo "Available actions:"
 	@echo "  make           Build ATPR ELF file"
-	@echo "  make build     ^"
+	@echo "  make build       and check size"
 	@echo "  make help      Show this help"
 	@echo "  make install   Upload with avrdude"
 	@echo "  make clean     Clean build files"
