@@ -54,8 +54,10 @@ help:
 	@echo "  make clean     Clean build files"
 	@echo
 	@echo "Configurations:"
-	@echo "  Target MCU: $(MCU)"
-	@echo "  F_CPU: $(F_CPU)"
+	@echo "   Target MCU: $(MCU)"
+	@echo "        F_CPU: $(F_CPU)"
+	@echo "  Upload Port: $(PORT)"
+	@echo "   Programmer: $(PRG)"
 
 PORT = usb
 PRG = usbasp
