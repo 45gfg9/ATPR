@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -16,8 +15,13 @@ jobs:
       uses: actions/checkout@v2
       with:
         submodules: true
+
+    - name: Install AVR toolchain
+      run: apt install gcc-avr binutils-avr avr-libc
+
     - name: Make
-      uses: bazhenov/action-avr-make@v1.0
+      run: make
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
       with:
