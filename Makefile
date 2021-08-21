@@ -1,4 +1,4 @@
-MCU = atmega16
+MCU = atmega16 # or atmega32
 F_CPU = 12000000L
 
 VPATH = src v-usb/usbdrv
@@ -35,7 +35,18 @@ $(OUT_DIR)/main.elf: $(OBJECTS)
 	$(CC) $(OBJECTS) -o $@
 
 help:
-	@echo "ATPR Makefile"
+	@echo "Welcome to ATPR Makefile."
+	@echo
+	@echo "Available actions:"
+	@echo "  make           Build ATPR ELF file"
+	@echo "  make build     ^"
+	@echo "  make help      Show this help"
+	@echo "  make install   Upload with avrdude"
+	@echo "  make clean     Clean build files"
+	@echo
+	@echo "Configurations:"
+	@echo "  Target MCU: $(MCU)"
+	@echo "  F_CPU: $(F_CPU)"
 
 PORT = usb
 PRG = usbasp
@@ -45,4 +56,4 @@ install: build
 
 .PHONY: clean
 clean:
-	rm -r build
+	rm -rf build
