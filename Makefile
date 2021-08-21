@@ -6,30 +6,32 @@ VPATH = src:v-usb/usbdrv
 LIBPATH = include v-usb/usbdrv
 
 CC = avr-gcc
-CPPC = avr-g++
+CXX = avr-g++
 
-CARGS = $(addprefix -I, $(LIBPATH)) -Wall -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU)
+FLAGS = $(addprefix -I, $(LIBPATH)) -Wall -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU)
 
 OUT_DIR = build
 
 # Must we specify all .o here?
-OBJECTS = usbdrv.o usbdrvasm.o oddebug.o ATPR.o
+OBJECTS = $(addprefix $(OUT_DIR)/, usbdrv.o usbdrvasm.o oddebug.o ATPR.o)
 
-.cpp.o:
-	$(CPPC) $(CARGS) -c $< -o $(OUT_DIR)/$@
+build: mkdir $(OUT_DIR)/main.elf
 
-.c.o:
-	$(CC) $(CARGS) -c $< -o $(OUT_DIR)/$@
+$(OUT_DIR)/%.o: %.cpp
+	$(CXX) $(FLAGS) -c $< -o $@
 
-.S.o:
-	$(CC) $(CARGS) -x assembler-with-cpp -c $< -o $(OUT_DIR)/$@
+$(OUT_DIR)/%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
+
+$(OUT_DIR)/%.o: %.S
+	$(CC) $(FLAGS) -x assembler-with-cpp -c $< -o $@
 # -x flag for Windows compatibility
 
-build: mkdir $(OBJECTS)
-	$(CC) $(addprefix $(OUT_DIR)/, $(OBJECTS)) -o $(OUT_DIR)/main.elf
+$(OUT_DIR)/main.elf: $(OBJECTS)
+	$(CC) $(OBJECTS) -o $@
 
 mkdir:
-	mkdir $(OUT_DIR) 2>/dev/null || true
+	@mkdir -p $(OUT_DIR)
 
 help:
 	@echo "ATPR Makefile"
@@ -37,7 +39,7 @@ help:
 PORT = usb
 PRG = usbasp
 
-upload: build
+install: build
 	avrdude -c $(PRG) -P $(PORT) -p $(MCU)
 
 .PHONY: clean
