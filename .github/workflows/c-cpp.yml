@@ -1,0 +1,29 @@
+name: ATPR
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: true
+
+    - name: Install AVR toolchain
+      run: sudo apt install gcc-avr binutils-avr avr-libc
+
+    - name: Make
+      run: make
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ATPR-${{ github.run_number }}
+        path: build/ATPR.elf
