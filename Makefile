@@ -18,14 +18,15 @@ CFLAGS = -mmcu=$(MCU) -Wall -Os
 
 # outputs
 OUT_DIR = build
-TARGET = ATPR.elf
+ELF_FILE = ATPR.elf
+TARGET = $(OUT_DIR)/$(ELF_FILE)
 
 # sources
 SRC_EXT = cpp|c|S
 OBJECTS = $(shell find $(VPATH) | sed -rn 's/.+\/(.+)\.($(SRC_EXT))$$/$(OUT_DIR)\/\1.o/p')
 
-build: mkdir $(OUT_DIR)/$(TARGET)
-	avr-size --mcu=$(MCU) -C $(OUT_DIR)/$(TARGET)
+build: mkdir $(TARGET)
+	avr-size --mcu=$(MCU) -C $(TARGET)
 
 mkdir:
 	@mkdir -p $(OUT_DIR)
@@ -40,17 +41,17 @@ $(OUT_DIR)/%.o: %.S
 	$(CC) $(CPPFLAGS) $(CFLAGS) -x assembler-with-cpp -c $< -o $@
 # -x flag for Windows compatibility
 
-$(OUT_DIR)/$(TARGET): $(OBJECTS)
+$(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $@
 
 help:
 	@echo "Welcome to ATPR Makefile."
 	@echo
 	@echo "Available actions:"
-	@echo "  make           Build ATPR ELF file"
-	@echo "  make build       and check size"
+	@echo "  make [build]   Build ATPR ELF file"
 	@echo "  make help      Show this help"
 	@echo "  make install   Upload with avrdude"
+	@echo "  make fuse      Set fuse bits"
 	@echo "  make clean     Clean build files"
 	@echo
 	@echo "Configurations:"
@@ -59,11 +60,18 @@ help:
 	@echo "  Upload Port: $(PORT)"
 	@echo "   Programmer: $(PRG)"
 
+# upload settings
 PORT = usb
 PRG = usbasp
+HFUSE = 0xD9
+LFUSE = 0xEF
+AVRDUDE = avrdude -p$(MCU) -c$(PRG) -P$(PORT)
+
+fuse:
+	$(AVRDUDE) -Uhfuse:w:$(HFUSE):m -Ulfuse:w:$(LFUSE):m
 
 install: build
-	avrdude -c $(PRG) -P $(PORT) -p $(MCU)
+	$(AVRDUDE) -Uflash:w:$(TARGET)
 
 .PHONY: clean
 clean:
