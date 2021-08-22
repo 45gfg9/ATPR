@@ -17,13 +17,16 @@ jobs:
         submodules: true
 
     - name: Install AVR toolchain
-      run: sudo apt install gcc-avr binutils-avr avr-libc
+      run: |
+        sudo apt install gcc-avr binutils-avr avr-libc
+        avr-gcc -v
+        avr-size -v
 
     - name: Make
       run: make
 
-    - name: Upload a Build Artifact
+    - name: Upload ELF
       uses: actions/upload-artifact@v2
       with:
         name: ATPR-${{ github.run_number }}
-        path: build/ATPR.elf
+        path: build/*.elf
