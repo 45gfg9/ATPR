@@ -42,7 +42,7 @@ $(OUT_DIR)/%.o: %.S
 # -x flag for Windows compatibility
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(OBJECTS) -o $@
 
 help:
 	@echo "Welcome to ATPR Makefile."
