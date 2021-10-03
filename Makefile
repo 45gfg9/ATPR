@@ -25,11 +25,14 @@ TARGET = $(OUT_DIR)/$(ELF_FILE)
 SRC_EXT = cpp|c|S
 OBJECTS = $(shell find $(VPATH) | sed -rn 's/.+\/(.+)\.($(SRC_EXT))$$/$(OUT_DIR)\/\1.o/p')
 
-build: mkdir $(TARGET)
+build: check mkdir $(TARGET)
 	avr-size --mcu=$(MCU) -C $(TARGET)
 
 mkdir:
 	@mkdir -p $(OUT_DIR)
+
+check:
+	@cppcheck src
 
 $(OUT_DIR)/%.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@

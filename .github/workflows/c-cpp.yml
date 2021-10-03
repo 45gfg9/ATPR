@@ -16,9 +16,9 @@ jobs:
       with:
         submodules: true
 
-    - name: Install AVR toolchain
+    - name: Install toolchain
       run: |
-        sudo apt install gcc-avr binutils-avr avr-libc
+        sudo apt install cppcheck gcc-avr binutils-avr avr-libc
         avr-gcc -v
         avr-size -v
 
