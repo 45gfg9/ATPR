@@ -22,9 +22,10 @@
 #include <ATPR.h>
 
 static void usbReset() {
-  USBDDR |= USBMASK; // SE0 signal
-  _delay_ms(10);
-  USBDDR = 0;
+  usbDeviceDisconnect();
+  wdt_reset();
+  _delay_ms(250);
+  usbDeviceConnect();
 }
 
 int main() {
@@ -39,8 +40,6 @@ int main() {
     wdt_reset();
     usbPoll();
   }
-
-  return 0;
 }
 
 usbMsgLen_t usbFunctionSetup(uint8_t data[8]) {
