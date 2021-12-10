@@ -43,7 +43,24 @@ int main() {
 }
 
 usbMsgLen_t usbFunctionSetup(uint8_t data[8]) {
+  // TODO
   (void)reinterpret_cast<usbRequest_t *>(data);
+
+  return USB_NO_MSG;
+}
+
+uint8_t usbFunctionRead(uint8_t *data, uint8_t len) {
+  // TODO
+  (void)data;
+  (void)len;
+
+  return USB_NO_MSG;
+}
+
+uint8_t usbFunctionWrite(uint8_t *data, uint8_t len) {
+  // TODO
+  (void)data;
+  (void)len;
 
   return USB_NO_MSG;
 }

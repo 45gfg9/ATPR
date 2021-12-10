@@ -1,5 +1,3 @@
-// clang-format off
-
 /* Name: usbconfig.h
  * Project: V-USB, virtual USB port for Atmel's(r) AVR(r) microcontrollers
  * Author: Christian Starkjohann
@@ -125,12 +123,12 @@ section at the end of this file).
  * The value is in milliamperes. [It will be divided by two since USB
  * communicates power requirements in units of 2 mA.]
  */
-#define USB_CFG_IMPLEMENT_FN_WRITE      0
+#define USB_CFG_IMPLEMENT_FN_WRITE      1
 /* Set this to 1 if you want usbFunctionWrite() to be called for control-out
  * transfers. Set it to 0 if you don't need it and want to save a couple of
  * bytes.
  */
-#define USB_CFG_IMPLEMENT_FN_READ       0
+#define USB_CFG_IMPLEMENT_FN_READ       1
 /* Set this to 1 if you need to send control replies which are generated
  * "on the fly" when usbFunctionRead() is called. If you only want to send
  * data from a static buffer, set it to 0 and return the data from
@@ -259,8 +257,8 @@ section at the end of this file).
  * the macros. See the file USB-IDs-for-free.txt before you assign a name if
  * you use a shared VID/PID.
  */
-#define USB_CFG_SERIAL_NUMBER       '2', '5', '1', '0', '2', '9', '3', '0', '5'
-#define USB_CFG_SERIAL_NUMBER_LEN   9
+#define USB_CFG_SERIAL_NUMBER       '1', '1', '8', '4', '6', '6', '5', '9', '2', '0'
+#define USB_CFG_SERIAL_NUMBER_LEN   10
 /* Same as above for the serial number. If you don't want a serial number,
  * undefine the macros.
  * It may be useful to provide the serial number through other means than at
