@@ -24,7 +24,7 @@
 static void usbReset() {
   usbDeviceDisconnect();
   wdt_reset();
-  _delay_ms(250);
+  _delay_ms(50);
   usbDeviceConnect();
 }
 
@@ -60,7 +60,8 @@ uint8_t usbFunctionRead(uint8_t *data, uint8_t len) {
 
   odDebug(0x11, data, len);
 
-  return USB_NO_MSG;
+  // return actual bytes written
+  return 0;
 }
 
 uint8_t usbFunctionWrite(uint8_t *data, uint8_t len) {
@@ -70,5 +71,7 @@ uint8_t usbFunctionWrite(uint8_t *data, uint8_t len) {
 
   odDebug(0x12, data, len);
 
-  return USB_NO_MSG;
+  // received entire payload successfully: return 1
+  // expect more data: return 0
+  return 1;
 }
