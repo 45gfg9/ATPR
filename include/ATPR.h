@@ -18,18 +18,21 @@
 #ifndef __ATPR_H__
 #define __ATPR_H__
 
+#define DEBUG_LEVEL 3
+
+#define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
+#define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+// include v-usb headers
 #include "usbdrv.h"
 #include "oddebug.h"
 
 #ifdef __cplusplus
 }
 #endif
-
-#define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
-#define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 
 #endif
