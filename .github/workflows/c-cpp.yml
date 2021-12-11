@@ -18,7 +18,7 @@ jobs:
 
     - name: Install toolchain
       run: |
-        sudo apt install cppcheck gcc-avr binutils-avr avr-libc
+        sudo apt-get install cppcheck gcc-avr binutils-avr avr-libc
         avr-gcc -v
         avr-size -v
 
