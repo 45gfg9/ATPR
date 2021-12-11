@@ -13,8 +13,8 @@ CC = avr-gcc
 CXX = avr-g++
 
 # preprocess & compile flags
-CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU)
-CFLAGS = -mmcu=$(MCU) -Wall -Wextra -Werror -Os
+CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU) -DDEBUG_LEVEL=3
+CFLAGS = -mmcu=$(MCU) -Wall -Wextra -Werror -Wno-error=cpp -Os
 
 # outputs
 OUT_DIR = build
@@ -64,6 +64,7 @@ help:
 	@echo "   Programmer: $(PRG)"
 
 # upload settings
+# hopefully one day we'll use ATPR for this
 PORT = usb
 PRG = usbasp
 HFUSE = 0xD9

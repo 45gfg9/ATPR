@@ -31,6 +31,8 @@ static void usbReset() {
 int main() {
   wdt_enable(WDTO_1S);
 
+  odDebugInit();
+
   usbReset();
 
   usbInit();
@@ -46,6 +48,8 @@ usbMsgLen_t usbFunctionSetup(uint8_t data[8]) {
   // TODO
   (void)reinterpret_cast<usbRequest_t *>(data);
 
+  odDebug(0x10, data, 8);
+
   return USB_NO_MSG;
 }
 
@@ -54,6 +58,8 @@ uint8_t usbFunctionRead(uint8_t *data, uint8_t len) {
   (void)data;
   (void)len;
 
+  odDebug(0x11, data, len);
+
   return USB_NO_MSG;
 }
 
@@ -61,6 +67,8 @@ uint8_t usbFunctionWrite(uint8_t *data, uint8_t len) {
   // TODO
   (void)data;
   (void)len;
+
+  odDebug(0x12, data, len);
 
   return USB_NO_MSG;
 }

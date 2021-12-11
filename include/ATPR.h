@@ -18,8 +18,6 @@
 #ifndef __ATPR_H__
 #define __ATPR_H__
 
-#define DEBUG_LEVEL 3
-
 #define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 
