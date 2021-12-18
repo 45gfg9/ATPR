@@ -32,7 +32,7 @@ mkdir:
 	@mkdir -p $(OUT_DIR)
 
 check:
-	@cppcheck src
+	@cppcheck -Iinclude --std=c++11 --platform=avr8 src
 
 $(OUT_DIR)/%.o: %.cpp
 	$(CXX) $(CPPFLAGS) $(CFLAGS) -std=c++11 -c $< -o $@
