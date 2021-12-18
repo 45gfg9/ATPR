@@ -14,7 +14,7 @@ CXX = avr-g++
 
 # preprocess & compile flags
 CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU) -DDEBUG_LEVEL=3
-CFLAGS = -mmcu=$(MCU) -Wall -Wextra -Werror -Wno-error=cpp -Os
+CFLAGS = -mmcu=$(MCU) -std=c++11 -Wall -Wextra -Werror -Wno-error=cpp -Os
 
 # outputs
 OUT_DIR = build
