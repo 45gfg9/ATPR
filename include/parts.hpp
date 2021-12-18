@@ -29,6 +29,9 @@ enum class MemType : uint8_t {
   LOCK_BITS,
 };
 
+// polymorphic is not out-of-the-box for AVR. oh.
+#if 0
+
 class Chip {
 public:
   Chip() = default;
@@ -44,5 +47,7 @@ public:
   void read() override {}
   void write() override {}
 } AT89;
+
+#endif
 
 #endif
