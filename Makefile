@@ -1,6 +1,6 @@
 # atmega16 or atmega32
 MCU = atmega16
-F_CPU = 12000000L
+F_CPU = 16000000L
 
 # source dirs
 VPATH = src v-usb/usbdrv
