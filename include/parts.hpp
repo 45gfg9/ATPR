@@ -15,31 +15,34 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <avr/wdt.h>
-#include <util/delay.h>
+#ifndef __ATPR_PARTS_HPP__
+#define __ATPR_PARTS_HPP__
+
 #include <ATPR.hpp>
 
-static void usbReset() {
-  usbDeviceDisconnect();
-  wdt_reset();
-  _delay_ms(50);
-  usbDeviceConnect();
-}
+// THIS FILE IS WIP
 
-int main() {
-  wdt_enable(WDTO_1S);
+enum class MemType : uint8_t {
+  FLASH,
+  EEPROM,
+  FUSE,
+  LOCK_BITS,
+};
 
-  odDebugInit();
+class Chip {
+public:
+  Chip() = default;
+  virtual ~Chip() = default;
 
-  usbReset();
+  // TODO
+  virtual void read() = 0;
+  virtual void write() = 0;
+};
 
-  usbInit();
-  sei();
+class : public Chip {
+public:
+  void read() override {}
+  void write() override {}
+} AT89;
 
-  while (true) {
-    wdt_reset();
-    usbPoll();
-  }
-}
+#endif

@@ -15,22 +15,25 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef __ATPR_H__
-#define __ATPR_H__
+#ifndef __ATPR_HPP__
+#define __ATPR_HPP__
+
+#include <stdlib.h>
+#include <stdint.h>
+
+#include <parts.hpp>
 
 #define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+extern uint32_t address;
+extern uint16_t pageSize;
+extern uint16_t nBytes;
 
+extern "C" {
 // include v-usb headers
 #include "usbdrv.h"
 #include "oddebug.h"
-
-#ifdef __cplusplus
 }
-#endif
 
 #endif
