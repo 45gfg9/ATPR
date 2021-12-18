@@ -14,7 +14,7 @@ CXX = avr-g++
 
 # preprocess & compile flags
 CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU) -DDEBUG_LEVEL=3
-CFLAGS = -mmcu=$(MCU) -std=c++11 -Wall -Wextra -Werror -Wno-error=cpp -Os
+CFLAGS = -mmcu=$(MCU) -Wall -Wextra -Werror -Wno-error=cpp -Os
 
 # outputs
 OUT_DIR = build
@@ -35,7 +35,7 @@ check:
 	@cppcheck src
 
 $(OUT_DIR)/%.o: %.cpp
-	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CFLAGS) -std=c++11 -c $< -o $@
 
 $(OUT_DIR)/%.o: %.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
@@ -64,7 +64,7 @@ help:
 	@echo "   Programmer: $(PRG)"
 
 # upload settings
-# hopefully one day we'll use ATPR for this
+# hopefully one day we'll use ATPRsup for this
 PORT = usb
 PRG = usbasp
 HFUSE = 0xD9
