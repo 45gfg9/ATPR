@@ -17,10 +17,10 @@ jobs:
         submodules: true
 
     - name: Install toolchain
-      run:
-        - sudo apt-get install cppcheck gcc-avr binutils-avr avr-libc
-        - avr-gcc -v
-        - avr-size -v
+      run: |
+        sudo apt-get install cppcheck gcc-avr binutils-avr avr-libc
+        avr-gcc -v
+        avr-size -v
 
     - name: Make
       run: make
