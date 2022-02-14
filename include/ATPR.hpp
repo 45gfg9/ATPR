@@ -21,7 +21,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#include <parts.hpp>
+#include "debug.hpp"
+#include "parts.hpp"
 
 #define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
@@ -33,7 +34,6 @@ extern uint16_t nBytes;
 extern "C" {
 // include v-usb headers
 #include "usbdrv.h"
-#include "oddebug.h"
 }
 
 #endif

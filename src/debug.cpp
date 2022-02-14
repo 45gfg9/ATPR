@@ -15,39 +15,36 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+// ATPR debug utility.
+
+#ifdef ATPR_DBGEN
+
 #include <ATPR.hpp>
-#include <string.h>
+#include "debug.hpp"
 
-// see declarations for impl notes
-usbMsgLen_t usbFunctionSetup(uint8_t data[8]) {
-  // TODO
-  (void)reinterpret_cast<usbRequest_t *>(data);
+#define BAUD 76800
+#include <util/setbaud.h>
+#include "util/delay.h"
 
-  // control-in:
-  // have `usbMsgPtr` set: return size
-  // usbFunctionRead(): return USB_NO_MSG
-  //
-  // control-out:
-  // ignore incoming data: return 0
-  // usbFunctionWrite(): return USB_NO_MSG
-  return USB_NO_MSG;
-}
+static FILE serr;
 
-uint8_t usbFunctionRead(uint8_t *data, uint8_t len) {
-  // TODO
-  (void)data;
-  (void)len;
-
-  // return actual bytes written to `data`
+static int uart_putchar(char c, FILE *) {
+  loop_until_bit_is_set(UCSRA, UDRE);
+  UDR = c;
   return 0;
 }
 
-uint8_t usbFunctionWrite(uint8_t *data, uint8_t len) {
-  // TODO
-  (void)data;
-  (void)len;
+void debugInit() {
+  asm volatile("wdr");
 
-  // received entire payload: return 1
-  // expect more data: return 0
-  return 1;
+  UCSRA |= USE_2X << U2X;
+  UCSRB |= _BV(TXEN);
+  UBRRL = UBRRL_VALUE;
+
+  stderr = &serr;
+  fdev_setup_stream(stderr, uart_putchar, nullptr, _FDEV_SETUP_WRITE);
+
+  ATPRDBG("Hi from ATPR\n");
 }
+
+#endif
