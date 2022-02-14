@@ -1,5 +1,5 @@
 /* ATPR - Yet another programmer & debugger for Atmel MCUs
- * Copyright (C) 2021 45gfg9
+ * Copyright (C) 2021-2022 45gfg9
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
