@@ -35,10 +35,10 @@ check:
 	@cppcheck -Iinclude --std=c++11 --platform=avr8 src
 
 $(OUT_DIR)/%.o: %.cpp
-	$(CXX) $(CPPFLAGS) $(CFLAGS) -std=c++17 -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CFLAGS) -std=c++11 -c $< -o $@
 
 $(OUT_DIR)/%.o: %.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) -std=c17 -c $< -o $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) -std=c11 -c $< -o $@
 
 $(OUT_DIR)/%.o: %.S
 	$(CC) $(CPPFLAGS) $(CFLAGS) -x assembler-with-cpp -c $< -o $@
