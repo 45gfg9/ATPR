@@ -1,0 +1,994 @@
+
+avrdude: Version 6.3, compiled on Sep 21 2018 at 19:15:33
+         Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+         Copyright (c) 2007-2014 Joerg Wunsch
+
+         System wide configuration file is "/usr/local/Cellar/avrdude/6.3_1/etc/avrdude.conf"
+         User configuration file is "/Users/45gfg9/.avrduderc"
+
+         Using Port                    : usb
+         Using Programmer              : usbasp
+avrdude: usbasp_open("usb")
+avrdude: seen device from vendor ->45gfg9.net<-
+avrdude: seen product ->ATPR<-
+avrdude: seen device from vendor ->www.fischl.de<-
+avrdude: seen product ->USBasp<-
+         AVR Part                      : ATmega16
+         Chip Erase delay              : 9000 us
+         PAGEL                         : PD7
+         BS2                           : PA0
+         RESET disposition             : dedicated
+         RETRY pulse                   : SCK
+         serial program mode           : yes
+         parallel program mode         : yes
+         Timeout                       : 200
+         StabDelay                     : 100
+         CmdexeDelay                   : 25
+         SyncLoops                     : 32
+         ByteDelay                     : 0
+         PollIndex                     : 3
+         PollValue                     : 0x53
+         Memory Detail                 :
+
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           eeprom         4    10   128    0 no        512    4      0  9000  9000 0xff 0xff
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ               31     VALUE      7      1
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      0
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21    IGNORE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17   ADDRESS      9      0
+                                  16   ADDRESS      8      0
+                                  15   ADDRESS      7      0
+                                  14   ADDRESS      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+               WRITE              31     VALUE      7      1
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      0
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21    IGNORE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17   ADDRESS      9      0
+                                  16   ADDRESS      8      0
+                                  15   ADDRESS      7      0
+                                  14   ADDRESS      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7     INPUT      7      0
+                                   6     INPUT      6      0
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+               LOADPAGE_LO        31     VALUE      7      1
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      0
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      1
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21     VALUE      5      0
+                                  20     VALUE      4      0
+                                  19     VALUE      3      0
+                                  18     VALUE      2      0
+                                  17     VALUE      1      0
+                                  16     VALUE      0      0
+                                  15     VALUE      7      0
+                                  14     VALUE      6      0
+                                  13     VALUE      5      0
+                                  12     VALUE      4      0
+                                  11     VALUE      3      0
+                                  10     VALUE      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7     INPUT      7      0
+                                   6     INPUT      6      0
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+               WRITEPAGE          31     VALUE      7      1
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      0
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      1
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21    IGNORE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17   ADDRESS      9      0
+                                  16   ADDRESS      8      0
+                                  15   ADDRESS      7      0
+                                  14   ADDRESS      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9     VALUE      1      0
+                                   8     VALUE      0      0
+                                   7    IGNORE      7      0
+                                   6    IGNORE      6      0
+                                   5    IGNORE      5      0
+                                   4    IGNORE      4      0
+                                   3    IGNORE      3      0
+                                   2    IGNORE      2      0
+                                   1    IGNORE      1      0
+                                   0    IGNORE      0      0
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           flash         33     6   128    0 yes     16384  128    128  4500  4500 0xff 0xff
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ_LO            31     VALUE      7      0
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      0
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21   ADDRESS     13      0
+                                  20   ADDRESS     12      0
+                                  19   ADDRESS     11      0
+                                  18   ADDRESS     10      0
+                                  17   ADDRESS      9      0
+                                  16   ADDRESS      8      0
+                                  15   ADDRESS      7      0
+                                  14   ADDRESS      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+               READ_HI            31     VALUE      7      0
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      0
+                                  27     VALUE      3      1
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21   ADDRESS     13      0
+                                  20   ADDRESS     12      0
+                                  19   ADDRESS     11      0
+                                  18   ADDRESS     10      0
+                                  17   ADDRESS      9      0
+                                  16   ADDRESS      8      0
+                                  15   ADDRESS      7      0
+                                  14   ADDRESS      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+               LOADPAGE_LO        31     VALUE      7      0
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      0
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21    IGNORE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17    IGNORE      1      0
+                                  16    IGNORE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7     INPUT      7      0
+                                   6     INPUT      6      0
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+               LOADPAGE_HI        31     VALUE      7      0
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      0
+                                  27     VALUE      3      1
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21    IGNORE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17    IGNORE      1      0
+                                  16    IGNORE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13   ADDRESS      5      0
+                                  12   ADDRESS      4      0
+                                  11   ADDRESS      3      0
+                                  10   ADDRESS      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7     INPUT      7      0
+                                   6     INPUT      6      0
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+               WRITEPAGE          31     VALUE      7      0
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      0
+                                  27     VALUE      3      1
+                                  26     VALUE      2      1
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21   ADDRESS     13      0
+                                  20   ADDRESS     12      0
+                                  19   ADDRESS     11      0
+                                  18   ADDRESS     10      0
+                                  17   ADDRESS      9      0
+                                  16   ADDRESS      8      0
+                                  15   ADDRESS      7      0
+                                  14   ADDRESS      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7    IGNORE      7      0
+                                   6    IGNORE      6      0
+                                   5    IGNORE      5      0
+                                   4    IGNORE      4      0
+                                   3    IGNORE      3      0
+                                   2    IGNORE      2      0
+                                   1    IGNORE      1      0
+                                   0    IGNORE      0      0
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           lock           0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ               31     VALUE      7      0
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      1
+                                  27     VALUE      3      1
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21     VALUE      5      0
+                                  20     VALUE      4      0
+                                  19     VALUE      3      0
+                                  18     VALUE      2      0
+                                  17     VALUE      1      0
+                                  16     VALUE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7    IGNORE      7      0
+                                   6    IGNORE      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+               WRITE              31     VALUE      7      1
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      0
+                                  27     VALUE      3      1
+                                  26     VALUE      2      1
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      1
+                                  22     VALUE      6      1
+                                  21     VALUE      5      1
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17    IGNORE      1      0
+                                  16    IGNORE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7     VALUE      7      1
+                                   6     VALUE      6      1
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           lfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ               31     VALUE      7      0
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      1
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21     VALUE      5      0
+                                  20     VALUE      4      0
+                                  19     VALUE      3      0
+                                  18     VALUE      2      0
+                                  17     VALUE      1      0
+                                  16     VALUE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+               WRITE              31     VALUE      7      1
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      0
+                                  27     VALUE      3      1
+                                  26     VALUE      2      1
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      1
+                                  22     VALUE      6      0
+                                  21     VALUE      5      1
+                                  20     VALUE      4      0
+                                  19     VALUE      3      0
+                                  18     VALUE      2      0
+                                  17     VALUE      1      0
+                                  16     VALUE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7     INPUT      7      0
+                                   6     INPUT      6      0
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           hfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ               31     VALUE      7      0
+                                  30     VALUE      6      1
+                                  29     VALUE      5      0
+                                  28     VALUE      4      1
+                                  27     VALUE      3      1
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21     VALUE      5      0
+                                  20     VALUE      4      0
+                                  19     VALUE      3      1
+                                  18     VALUE      2      0
+                                  17     VALUE      1      0
+                                  16     VALUE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+               WRITE              31     VALUE      7      1
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      0
+                                  27     VALUE      3      1
+                                  26     VALUE      2      1
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      1
+                                  22     VALUE      6      0
+                                  21     VALUE      5      1
+                                  20     VALUE      4      0
+                                  19     VALUE      3      1
+                                  18     VALUE      2      0
+                                  17     VALUE      1      0
+                                  16     VALUE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9    IGNORE      1      0
+                                   8    IGNORE      0      0
+                                   7     INPUT      7      0
+                                   6     INPUT      6      0
+                                   5     INPUT      5      0
+                                   4     INPUT      4      0
+                                   3     INPUT      3      0
+                                   2     INPUT      2      0
+                                   1     INPUT      1      0
+                                   0     INPUT      0      0
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ               31     VALUE      7      0
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      1
+                                  27     VALUE      3      0
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23    IGNORE      7      0
+                                  22    IGNORE      6      0
+                                  21    IGNORE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17    IGNORE      1      0
+                                  16    IGNORE      0      0
+                                  15    IGNORE      7      0
+                                  14    IGNORE      6      0
+                                  13    IGNORE      5      0
+                                  12    IGNORE      4      0
+                                  11    IGNORE      3      0
+                                  10    IGNORE      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           calibration    0     0     0    0 no          4    0      0     0     0 0x00 0x00
+             Memory Ops:
+               Oeration     Inst Bit  Bit Type  Bitno  Value
+               -----------  --------  --------  -----  -----
+               READ               31     VALUE      7      0
+                                  30     VALUE      6      0
+                                  29     VALUE      5      1
+                                  28     VALUE      4      1
+                                  27     VALUE      3      1
+                                  26     VALUE      2      0
+                                  25     VALUE      1      0
+                                  24     VALUE      0      0
+                                  23     VALUE      7      0
+                                  22     VALUE      6      0
+                                  21     VALUE      5      0
+                                  20    IGNORE      4      0
+                                  19    IGNORE      3      0
+                                  18    IGNORE      2      0
+                                  17    IGNORE      1      0
+                                  16    IGNORE      0      0
+                                  15     VALUE      7      0
+                                  14     VALUE      6      0
+                                  13     VALUE      5      0
+                                  12     VALUE      4      0
+                                  11     VALUE      3      0
+                                  10     VALUE      2      0
+                                   9   ADDRESS      1      0
+                                   8   ADDRESS      0      0
+                                   7    OUTPUT      7      0
+                                   6    OUTPUT      6      0
+                                   5    OUTPUT      5      0
+                                   4    OUTPUT      4      0
+                                   3    OUTPUT      3      0
+                                   2    OUTPUT      2      0
+                                   1    OUTPUT      1      0
+                                   0    OUTPUT      0      0
+
+         Programmer Type : usbasp
+         Description     : USBasp, http://www.fischl.de/usbasp/
+
+avrdude: usbasp_initialize()
+avrdude: usbasp_transmit("USBASP_FUNC_GETCAPABILITIES", 0x00, 0x00, 0x00, 0x00)
+avrdude: usbasp_spi_set_sck_period(0)
+avrdude: auto set sck period (because given equals null)
+avrdude: usbasp_transmit("USBASP_FUNC_SETISPSCK", 0x00, 0x00, 0x00, 0x00)
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: usbasp_transmit("USBASP_FUNC_CONNECT", 0x00, 0x00, 0x00, 0x00)
+avrdude: usbasp_program_enable()
+avrdude: usbasp_transmit("USBASP_FUNC_ENABLEPROG", 0x00, 0x00, 0x00, 0x00)
+         <= [00] 
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | avrdude: usbasp_spi_cmd(0x30, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x30, 0x00, 0x00, 0x00)
+         <= [00] [30] [00] [1e] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x30, 0x00, 0x1e
+avrdude: usbasp_spi_cmd(0x30, 0x00, 0x01, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x30, 0x00, 0x01, 0x00)
+         <= [00] [30] [00] [94] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x30, 0x00, 0x94
+################avrdude: usbasp_spi_cmd(0x30, 0x00, 0x02, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x30, 0x00, 0x02, 0x00)
+         <= [00] [30] [00] [03] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x30, 0x00, 0x03
+################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9403 (probably m16)
+avrdude: usbasp_spi_cmd(0x50, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x50, 0x00, 0x00, 0x00)
+         <= [00] [50] [00] [ef] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x50, 0x00, 0xef
+avrdude: safemode read 1, lfuse value: ef
+avrdude: usbasp_spi_cmd(0x50, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x50, 0x00, 0x00, 0x00)
+         <= [00] [50] [00] [ef] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x50, 0x00, 0xef
+avrdude: safemode read 2, lfuse value: ef
+avrdude: usbasp_spi_cmd(0x50, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x50, 0x00, 0x00, 0x00)
+         <= [00] [50] [00] [ef] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x50, 0x00, 0xef
+avrdude: safemode read 3, lfuse value: ef
+avrdude: safemode: lfuse reads as EF
+avrdude: usbasp_spi_cmd(0x58, 0x08, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x58, 0x08, 0x00, 0x00)
+         <= [00] [58] [08] [d9] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x58, 0x08, 0xd9
+avrdude: safemode read 1, hfuse value: d9
+avrdude: usbasp_spi_cmd(0x58, 0x08, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x58, 0x08, 0x00, 0x00)
+         <= [00] [58] [08] [d9] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x58, 0x08, 0xd9
+avrdude: safemode read 2, hfuse value: d9
+avrdude: usbasp_spi_cmd(0x58, 0x08, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x58, 0x08, 0x00, 0x00)
+         <= [00] [58] [08] [d9] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x58, 0x08, 0xd9
+avrdude: safemode read 3, hfuse value: d9
+avrdude: safemode: hfuse reads as D9
+avrdude: NOTE: "flash" memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: usbasp_chip_erase()
+avrdude: usbasp_spi_cmd(0xac, 0x80, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0xac, 0x80, 0x00, 0x00)
+         <= [00] [ac] [80] [00] 
+avrdude: usbasp_spi_cmd() => 0x00, 0xac, 0x80, 0x00
+avrdude: usbasp_initialize()
+avrdude: usbasp_transmit("USBASP_FUNC_GETCAPABILITIES", 0x00, 0x00, 0x00, 0x00)
+avrdude: usbasp_spi_set_sck_period(0)
+avrdude: auto set sck period (because given equals null)
+avrdude: usbasp_transmit("USBASP_FUNC_SETISPSCK", 0x00, 0x00, 0x00, 0x00)
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: usbasp_transmit("USBASP_FUNC_CONNECT", 0x00, 0x00, 0x00, 0x00)
+avrdude: usbasp_program_enable()
+avrdude: usbasp_transmit("USBASP_FUNC_ENABLEPROG", 0x00, 0x00, 0x00, 0x00)
+         <= [00] 
+avrdude: reading input file "build/ATPR.elf"
+avrdude: input file build/ATPR.elf auto detected as ELF
+avrdude: Considering PT_LOAD program header entry #0:
+    p_vaddr 0x0, p_paddr 0x0, p_filesz 1434
+avrdude: Found section ".text", LMA 0x0, sh_size 1434
+    Data block: d_buf 0x104d6c094, d_off 0x0, d_size 1434
+    Writing 1434 bytes to mem offset 0x0
+avrdude: Considering PT_LOAD program header entry #1:
+    p_vaddr 0x800060, p_paddr 0x59a, p_filesz 2
+avrdude: Found section ".data", LMA 0x59a, sh_size 2
+    Data block: d_buf 0x104d6c62e, d_off 0x0, d_size 2
+    Writing 2 bytes to mem offset 0x59a
+avrdude: writing flash (1436 bytes):
+
+Writing | avrdude: usbasp_program_paged_write("flash", 0x0, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x00, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x00, 0x00, 0x80, 0x01)
+          => [0c] [94] [4e] [00] [0c] [94] [82] [01] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [09] [02] [12] [00] [01] [01] [00] [a0] [32] [09] [04] [00] [00] [00] [00] [00] [00] [00] [12] [01] [10] [01] [ff] [00] [00] [08] [c0] [16] [dc] [05] [00] [01] [01] [02] [00] [01] [0a] [03] [41] [00] [54] [00] [50] [00] 
+####avrdude: usbasp_program_paged_write("flash", 0x80, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x00, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x80, 0x00, 0x80, 0x01)
+          => [52] [00] [16] [03] [34] [00] [35] [00] [67] [00] [66] [00] [67] [00] [39] [00] [2e] [00] [6e] [00] [65] [00] [74] [00] [04] [03] [09] [04] [11] [24] [1f] [be] [cf] [e5] [d4] [e0] [de] [bf] [cd] [bf] [10] [e0] [a0] [e6] [b0] [e0] [ea] [e9] [f5] [e0] [02] [c0] [05] [90] [0d] [92] [a2] [36] [b1] [07] [d9] [f7] [20] [e0] [a2] [e6] [b0] [e0] [01] [c0] [1d] [92] [ad] [38] [b2] [07] [e1] [f7] [0e] [94] [af] [02] [0c] [94] [cb] [02] [0c] [94] [00] [00] [fc] [01] [81] [81] [81] [30] [19] [f4] [97] [9a] [80] [e0] [08] [95] [82] [30] [e1] [f7] [97] [98] [fa] [cf] [cf] [93] [df] [93] [80] [91] [73] [00] [83] [50] [87] [fd] [28] [c0] [90] [91] 
+####avrdude: usbasp_program_paged_write("flash", 0x100, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x01, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x00, 0x01, 0x80, 0x01)
+          => [6f] [00] [9d] [32] [11] [f5] [88] [30] [01] [f5] [80] [91] [70] [00] [cc] [e0] [d0] [e0] [c8] [1b] [d1] [09] [c9] [58] [df] [4f] [83] [ec] [80] [93] [62] [00] [8a] [e5] [80] [93] [61] [00] [10] [92] [6e] [00] [88] [81] [80] [76] [09] [f4] [62] [c0] [ce] [01] [0e] [94] [6d] [00] [9f] [81] [91] [11] [04] [c0] [9e] [81] [98] [17] [08] [f4] [89] [2f] [80] [93] [60] [00] [10] [92] [73] [00] [80] [91] [61] [00] [84] [ff] [43] [c0] [80] [91] [60] [00] [8f] [3f] [09] [f4] [3e] [c0] [c8] [2f] [89] [30] [08] [f0] [c8] [e0] [98] [2f] [9c] [1b] [90] [93] [60] [00] [90] [91] [62] [00] [28] [e8] [92] [27] [90] [93] [62] [00] [88] [23] [01] [f1] 
+####avrdude: usbasp_program_paged_write("flash", 0x180, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x01, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x80, 0x01, 0x80, 0x01)
+          => [80] [91] [71] [00] [90] [91] [72] [00] [20] [91] [6e] [00] [26] [ff] [90] [c0] [fc] [01] [23] [e6] [30] [e0] [4c] [2f] [48] [0f] [54] [91] [d9] [01] [5c] [93] [2f] [5f] [3f] [4f] [31] [96] [4e] [13] [f8] [cf] [2f] [ef] [2c] [0f] [30] [e0] [2f] [5f] [3f] [4f] [82] [0f] [93] [1f] [90] [93] [72] [00] [80] [93] [71] [00] [6c] [2f] [83] [e6] [90] [e0] [0e] [94] [7e] [01] [84] [e0] [8c] [0f] [c8] [30] [19] [f0] [9f] [ef] [90] [93] [60] [00] [80] [93] [61] [00] [84] [e1] [90] [b3] [94] [71] [31] [f4] [81] [50] [d9] [f7] [10] [92] [74] [00] [10] [92] [6d] [00] [df] [91] [cf] [91] [08] [95] [2a] [81] [10] [92] [6b] [00] [99] [81] [91] [11] 
+####avrdude: usbasp_program_paged_write("flash", 0x200, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x02, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x00, 0x02, 0x80, 0x01)
+          => [0a] [c0] [10] [92] [6c] [00] [2b] [e6] [30] [e0] [82] [e0] [30] [93] [72] [00] [20] [93] [71] [00] [91] [cf] [95] [30] [29] [f4] [20] [93] [74] [00] [2b] [e6] [30] [e0] [f4] [cf] [96] [30] [99] [f5] [9b] [81] [91] [30] [59] [f4] [86] [e6] [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [82] [e1] [90] [e4] [90] [93] [6e] [00] [7a] [cf] [92] [30] [19] [f4] [84] [e5] [90] [e0] [f2] [cf] [93] [30] [a9] [f7] [21] [11] [08] [c0] [88] [e9] [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [84] [e0] [eb] [cf] [21] [30] [41] [f4] [82] [e8] [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [86] [e1] [e1] [cf] [22] [30] [f9] [f6] [88] [e7] 
+####avrdude: usbasp_program_paged_write("flash", 0x280, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x02, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x80, 0x02, 0x80, 0x01)
+          => [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [8a] [e0] [d7] [cf] [98] [30] [59] [f0] [99] [30] [19] [f4] [20] [93] [76] [00] [c1] [cf] [81] [e0] [9a] [30] [09] [f4] [bd] [cf] [80] [e0] [bb] [cf] [26] [e7] [30] [e0] [81] [e0] [ae] [cf] [a3] [e6] [b0] [e0] [fc] [01] [2c] [2f] [28] [0f] [31] [91] [3d] [93] [2e] [13] [fc] [cf] [73] [cf] [85] [b7] [82] [60] [85] [bf] [8b] [b7] [80] [64] [8b] [bf] [08] [95] [a8] [2f] [b9] [2f] [80] [e0] [90] [e0] [41] [e0] [50] [ea] [60] [95] [30] [e0] [09] [c0] [2d] [91] [82] [27] [97] [95] [87] [95] [10] [f0] [84] [27] [95] [27] [30] [5e] [c8] [f3] [6f] [5f] [a8] [f3] [08] [95] [ea] [df] [8d] [93] 
+#####avrdude: usbasp_program_paged_write("flash", 0x300, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x03, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x00, 0x03, 0x80, 0x01)
+          => [9d] [93] [08] [95] [cf] [93] [cf] [b7] [cf] [93] [c3] [95] [84] [9b] [e9] [f7] [84] [9b] [09] [c0] [84] [9b] [07] [c0] [84] [9b] [05] [c0] [84] [9b] [03] [c0] [84] [9b] [01] [c0] [a1] [c0] [df] [93] [c0] [91] [70] [00] [dd] [27] [c9] [58] [df] [4f] [84] [9b] [02] [c0] [df] [91] [eb] [cf] [2f] [93] [0f] [93] [1f] [93] [00] [b3] [2f] [ef] [04] [fb] [20] [f9] [4f] [93] [3f] [93] [10] [b3] [4f] [ef] [01] [27] [04] [fb] [21] [f9] [3b] [e0] [31] [c0] [4e] [7f] [01] [2f] [10] [b3] [21] [60] [28] [c0] [10] [2f] [4d] [7f] [22] [60] [00] [00] [00] [b3] [29] [c0] [4b] [7f] [24] [60] [01] [2f] [00] [00] [10] [b3] [2b] [c0] [10] [b3] [47] [7f] 
+####avrdude: usbasp_program_paged_write("flash", 0x380, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x03, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x80, 0x03, 0x80, 0x01)
+          => [28] [60] [2a] [c0] [4f] [7e] [00] [b3] [20] [61] [2c] [c0] [4f] [7d] [10] [b3] [20] [62] [2f] [c0] [4f] [7b] [00] [b3] [20] [64] [32] [c0] [42] [27] [00] [b3] [49] [93] [4f] [ef] [00] [00] [10] [27] [14] [fb] [20] [f9] [10] [b3] [14] [71] [c9] [f1] [29] [7f] [91] [f2] [01] [27] [04] [fb] [21] [f9] [00] [b3] [23] [7f] [89] [f2] [31] [50] [58] [f1] [10] [27] [14] [fb] [22] [f9] [10] [b3] [27] [7e] [79] [f2] [01] [27] [04] [fb] [23] [f9] [2f] [7c] [81] [f2] [00] [b3] [10] [27] [14] [fb] [24] [f9] [2f] [79] [71] [f2] [00] [c0] [10] [b3] [01] [27] [04] [fb] [25] [f9] [2f] [73] [59] [f2] [00] [c0] [00] [b3] [10] [27] [14] [fb] [26] [f9] 
+####avrdude: usbasp_program_paged_write("flash", 0x400, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x04, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x00, 0x04, 0x80, 0x01)
+          => [22] [30] [40] [f2] [00] [c0] [10] [b3] [01] [27] [04] [fb] [27] [f9] [24] [30] [28] [f6] [4f] [77] [20] [68] [10] [b3] [00] [00] [f9] [cf] [10] [e4] [1a] [bf] [00] [27] [17] [c0] [3b] [50] [31] [95] [c3] [1b] [d0] [40] [10] [e4] [1a] [bf] [08] [81] [03] [3c] [e9] [f0] [0b] [34] [d9] [f0] [20] [91] [6d] [00] [19] [81] [11] [0f] [12] [13] [ed] [cf] [09] [36] [41] [f1] [0d] [32] [11] [f0] [01] [3e] [39] [f7] [00] [93] [75] [00] [3f] [91] [4f] [91] [1f] [91] [0f] [91] [2f] [91] [df] [91] [ca] [b7] [c6] [fd] [51] [cf] [cf] [91] [cf] [bf] [cf] [91] [18] [95] [20] [91] [75] [00] [22] [23] [79] [f3] [10] [91] [73] [00] [11] [23] [11] [f5] 
+####avrdude: usbasp_program_paged_write("flash", 0x480, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x04, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x80, 0x04, 0x80, 0x01)
+          => [34] [30] [12] [f1] [30] [93] [73] [00] [20] [93] [6f] [00] [10] [91] [70] [00] [3b] [e0] [31] [1b] [30] [93] [70] [00] [17] [c0] [00] [91] [73] [00] [01] [30] [8c] [f4] [0a] [e5] [30] [91] [61] [00] [34] [fd] [10] [c0] [00] [93] [61] [00] [c2] [e6] [d0] [e0] [0f] [c0] [27] [95] [a8] [f4] [51] [50] [a9] [f4] [22] [0f] [00] [00] [f9] [cf] [4a] [e5] [03] [c0] [42] [ed] [01] [c0] [43] [2f] [c4] [e1] [d0] [e0] [32] [e0] [11] [b3] [14] [61] [94] [9a] [11] [bb] [02] [b3] [20] [e4] [14] [e1] [5f] [93] [01] [27] [56] [e0] [02] [bb] [27] [95] [20] [f4] [51] [50] [21] [f4] [22] [0f] [f9] [cf] [01] [27] [56] [e0] [00] [00] [3b] [5a] [02] [bb] 
+####avrdude: usbasp_program_paged_write("flash", 0x500, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x05, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x00, 0x05, 0x80, 0x01)
+          => [d0] [f2] [27] [95] [28] [f4] [51] [50] [29] [f4] [22] [0f] [00] [00] [f9] [cf] [01] [27] [56] [e0] [27] [95] [02] [bb] [20] [f4] [51] [50] [21] [f4] [22] [0f] [f9] [cf] [01] [27] [56] [e0] [29] [91] [33] [23] [02] [bb] [21] [f6] [0b] [7e] [10] [91] [74] [00] [11] [0f] [c6] [51] [d0] [40] [02] [bb] [11] [f0] [10] [93] [6d] [00] [10] [e4] [1a] [bf] [00] [61] [11] [b3] [1b] [7e] [40] [2f] [4b] [7e] [5f] [91] [00] [c0] [00] [c0] [02] [bb] [11] [bb] [42] [bb] [7c] [cf] [88] [e1] [9e] [e0] [0f] [b6] [f8] [94] [a8] [95] [81] [bd] [0f] [be] [91] [bd] [8f] [9a] [8c] [9a] [a8] [95] [2f] [eb] [87] [e2] [99] [e0] [21] [50] [80] [40] [90] [40] 
+####avrdude: usbasp_program_paged_write("flash", 0x580, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x05, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_WRITEFLASH", 0x80, 0x05, 0x80, 0x01)
+          => [e1] [f7] [00] [c0] [00] [00] [8c] [98] [0e] [94] [62] [01] [78] [94] [a8] [95] [0e] [94] [78] [00] [fc] [cf] [f8] [94] [ff] [cf] [ff] [5a] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] 
+##### | 100% 1.02s
+
+avrdude: 1436 bytes of flash written
+avrdude: verifying flash memory against build/ATPR.elf:
+avrdude: load data flash data from input file build/ATPR.elf:
+avrdude: input file build/ATPR.elf auto detected as ELF
+avrdude: Considering PT_LOAD program header entry #0:
+    p_vaddr 0x0, p_paddr 0x0, p_filesz 1434
+avrdude: Found section ".text", LMA 0x0, sh_size 1434
+    Data block: d_buf 0x104d6c094, d_off 0x0, d_size 1434
+    Writing 1434 bytes to mem offset 0x0
+avrdude: Considering PT_LOAD program header entry #1:
+    p_vaddr 0x800060, p_paddr 0x59a, p_filesz 2
+avrdude: Found section ".data", LMA 0x59a, sh_size 2
+    Data block: d_buf 0x104d6c62e, d_off 0x0, d_size 2
+    Writing 2 bytes to mem offset 0x59a
+avrdude: input file build/ATPR.elf contains 1436 bytes
+avrdude: reading on-chip flash data:
+
+Reading | avrdude: usbasp_program_paged_load("flash", 0x0, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x00, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x00, 0x00, 0x00, 0x00)
+         <= [0c] [94] [4e] [00] [0c] [94] [82] [01] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [0c] [94] [6b] [00] [09] [02] [12] [00] [01] [01] [00] [a0] [32] [09] [04] [00] [00] [00] [00] [00] [00] [00] [12] [01] [10] [01] [ff] [00] [00] [08] [c0] [16] [dc] [05] [00] [01] [01] [02] [00] [01] [0a] [03] [41] [00] [54] [00] [50] [00] 
+####avrdude: usbasp_program_paged_load("flash", 0x80, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x00, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x80, 0x00, 0x00, 0x00)
+         <= [52] [00] [16] [03] [34] [00] [35] [00] [67] [00] [66] [00] [67] [00] [39] [00] [2e] [00] [6e] [00] [65] [00] [74] [00] [04] [03] [09] [04] [11] [24] [1f] [be] [cf] [e5] [d4] [e0] [de] [bf] [cd] [bf] [10] [e0] [a0] [e6] [b0] [e0] [ea] [e9] [f5] [e0] [02] [c0] [05] [90] [0d] [92] [a2] [36] [b1] [07] [d9] [f7] [20] [e0] [a2] [e6] [b0] [e0] [01] [c0] [1d] [92] [ad] [38] [b2] [07] [e1] [f7] [0e] [94] [af] [02] [0c] [94] [cb] [02] [0c] [94] [00] [00] [fc] [01] [81] [81] [81] [30] [19] [f4] [97] [9a] [80] [e0] [08] [95] [82] [30] [e1] [f7] [97] [98] [fa] [cf] [cf] [93] [df] [93] [80] [91] [73] [00] [83] [50] [87] [fd] [28] [c0] [90] [91] 
+####avrdude: usbasp_program_paged_load("flash", 0x100, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x01, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x00, 0x01, 0x00, 0x00)
+         <= [6f] [00] [9d] [32] [11] [f5] [88] [30] [01] [f5] [80] [91] [70] [00] [cc] [e0] [d0] [e0] [c8] [1b] [d1] [09] [c9] [58] [df] [4f] [83] [ec] [80] [93] [62] [00] [8a] [e5] [80] [93] [61] [00] [10] [92] [6e] [00] [88] [81] [80] [76] [09] [f4] [62] [c0] [ce] [01] [0e] [94] [6d] [00] [9f] [81] [91] [11] [04] [c0] [9e] [81] [98] [17] [08] [f4] [89] [2f] [80] [93] [60] [00] [10] [92] [73] [00] [80] [91] [61] [00] [84] [ff] [43] [c0] [80] [91] [60] [00] [8f] [3f] [09] [f4] [3e] [c0] [c8] [2f] [89] [30] [08] [f0] [c8] [e0] [98] [2f] [9c] [1b] [90] [93] [60] [00] [90] [91] [62] [00] [28] [e8] [92] [27] [90] [93] [62] [00] [88] [23] [01] [f1] 
+####avrdude: usbasp_program_paged_load("flash", 0x180, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x01, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x80, 0x01, 0x00, 0x00)
+         <= [80] [91] [71] [00] [90] [91] [72] [00] [20] [91] [6e] [00] [26] [ff] [90] [c0] [fc] [01] [23] [e6] [30] [e0] [4c] [2f] [48] [0f] [54] [91] [d9] [01] [5c] [93] [2f] [5f] [3f] [4f] [31] [96] [4e] [13] [f8] [cf] [2f] [ef] [2c] [0f] [30] [e0] [2f] [5f] [3f] [4f] [82] [0f] [93] [1f] [90] [93] [72] [00] [80] [93] [71] [00] [6c] [2f] [83] [e6] [90] [e0] [0e] [94] [7e] [01] [84] [e0] [8c] [0f] [c8] [30] [19] [f0] [9f] [ef] [90] [93] [60] [00] [80] [93] [61] [00] [84] [e1] [90] [b3] [94] [71] [31] [f4] [81] [50] [d9] [f7] [10] [92] [74] [00] [10] [92] [6d] [00] [df] [91] [cf] [91] [08] [95] [2a] [81] [10] [92] [6b] [00] [99] [81] [91] [11] 
+####avrdude: usbasp_program_paged_load("flash", 0x200, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x02, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x00, 0x02, 0x00, 0x00)
+         <= [0a] [c0] [10] [92] [6c] [00] [2b] [e6] [30] [e0] [82] [e0] [30] [93] [72] [00] [20] [93] [71] [00] [91] [cf] [95] [30] [29] [f4] [20] [93] [74] [00] [2b] [e6] [30] [e0] [f4] [cf] [96] [30] [99] [f5] [9b] [81] [91] [30] [59] [f4] [86] [e6] [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [82] [e1] [90] [e4] [90] [93] [6e] [00] [7a] [cf] [92] [30] [19] [f4] [84] [e5] [90] [e0] [f2] [cf] [93] [30] [a9] [f7] [21] [11] [08] [c0] [88] [e9] [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [84] [e0] [eb] [cf] [21] [30] [41] [f4] [82] [e8] [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [86] [e1] [e1] [cf] [22] [30] [f9] [f6] [88] [e7] 
+####avrdude: usbasp_program_paged_load("flash", 0x280, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x02, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x80, 0x02, 0x00, 0x00)
+         <= [90] [e0] [90] [93] [72] [00] [80] [93] [71] [00] [8a] [e0] [d7] [cf] [98] [30] [59] [f0] [99] [30] [19] [f4] [20] [93] [76] [00] [c1] [cf] [81] [e0] [9a] [30] [09] [f4] [bd] [cf] [80] [e0] [bb] [cf] [26] [e7] [30] [e0] [81] [e0] [ae] [cf] [a3] [e6] [b0] [e0] [fc] [01] [2c] [2f] [28] [0f] [31] [91] [3d] [93] [2e] [13] [fc] [cf] [73] [cf] [85] [b7] [82] [60] [85] [bf] [8b] [b7] [80] [64] [8b] [bf] [08] [95] [a8] [2f] [b9] [2f] [80] [e0] [90] [e0] [41] [e0] [50] [ea] [60] [95] [30] [e0] [09] [c0] [2d] [91] [82] [27] [97] [95] [87] [95] [10] [f0] [84] [27] [95] [27] [30] [5e] [c8] [f3] [6f] [5f] [a8] [f3] [08] [95] [ea] [df] [8d] [93] 
+#####avrdude: usbasp_program_paged_load("flash", 0x300, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x03, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x00, 0x03, 0x00, 0x00)
+         <= [9d] [93] [08] [95] [cf] [93] [cf] [b7] [cf] [93] [c3] [95] [84] [9b] [e9] [f7] [84] [9b] [09] [c0] [84] [9b] [07] [c0] [84] [9b] [05] [c0] [84] [9b] [03] [c0] [84] [9b] [01] [c0] [a1] [c0] [df] [93] [c0] [91] [70] [00] [dd] [27] [c9] [58] [df] [4f] [84] [9b] [02] [c0] [df] [91] [eb] [cf] [2f] [93] [0f] [93] [1f] [93] [00] [b3] [2f] [ef] [04] [fb] [20] [f9] [4f] [93] [3f] [93] [10] [b3] [4f] [ef] [01] [27] [04] [fb] [21] [f9] [3b] [e0] [31] [c0] [4e] [7f] [01] [2f] [10] [b3] [21] [60] [28] [c0] [10] [2f] [4d] [7f] [22] [60] [00] [00] [00] [b3] [29] [c0] [4b] [7f] [24] [60] [01] [2f] [00] [00] [10] [b3] [2b] [c0] [10] [b3] [47] [7f] 
+####avrdude: usbasp_program_paged_load("flash", 0x380, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x03, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x80, 0x03, 0x00, 0x00)
+         <= [28] [60] [2a] [c0] [4f] [7e] [00] [b3] [20] [61] [2c] [c0] [4f] [7d] [10] [b3] [20] [62] [2f] [c0] [4f] [7b] [00] [b3] [20] [64] [32] [c0] [42] [27] [00] [b3] [49] [93] [4f] [ef] [00] [00] [10] [27] [14] [fb] [20] [f9] [10] [b3] [14] [71] [c9] [f1] [29] [7f] [91] [f2] [01] [27] [04] [fb] [21] [f9] [00] [b3] [23] [7f] [89] [f2] [31] [50] [58] [f1] [10] [27] [14] [fb] [22] [f9] [10] [b3] [27] [7e] [79] [f2] [01] [27] [04] [fb] [23] [f9] [2f] [7c] [81] [f2] [00] [b3] [10] [27] [14] [fb] [24] [f9] [2f] [79] [71] [f2] [00] [c0] [10] [b3] [01] [27] [04] [fb] [25] [f9] [2f] [73] [59] [f2] [00] [c0] [00] [b3] [10] [27] [14] [fb] [26] [f9] 
+####avrdude: usbasp_program_paged_load("flash", 0x400, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x04, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x00, 0x04, 0x00, 0x00)
+         <= [22] [30] [40] [f2] [00] [c0] [10] [b3] [01] [27] [04] [fb] [27] [f9] [24] [30] [28] [f6] [4f] [77] [20] [68] [10] [b3] [00] [00] [f9] [cf] [10] [e4] [1a] [bf] [00] [27] [17] [c0] [3b] [50] [31] [95] [c3] [1b] [d0] [40] [10] [e4] [1a] [bf] [08] [81] [03] [3c] [e9] [f0] [0b] [34] [d9] [f0] [20] [91] [6d] [00] [19] [81] [11] [0f] [12] [13] [ed] [cf] [09] [36] [41] [f1] [0d] [32] [11] [f0] [01] [3e] [39] [f7] [00] [93] [75] [00] [3f] [91] [4f] [91] [1f] [91] [0f] [91] [2f] [91] [df] [91] [ca] [b7] [c6] [fd] [51] [cf] [cf] [91] [cf] [bf] [cf] [91] [18] [95] [20] [91] [75] [00] [22] [23] [79] [f3] [10] [91] [73] [00] [11] [23] [11] [f5] 
+####avrdude: usbasp_program_paged_load("flash", 0x480, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x04, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x80, 0x04, 0x00, 0x00)
+         <= [34] [30] [12] [f1] [30] [93] [73] [00] [20] [93] [6f] [00] [10] [91] [70] [00] [3b] [e0] [31] [1b] [30] [93] [70] [00] [17] [c0] [00] [91] [73] [00] [01] [30] [8c] [f4] [0a] [e5] [30] [91] [61] [00] [34] [fd] [10] [c0] [00] [93] [61] [00] [c2] [e6] [d0] [e0] [0f] [c0] [27] [95] [a8] [f4] [51] [50] [a9] [f4] [22] [0f] [00] [00] [f9] [cf] [4a] [e5] [03] [c0] [42] [ed] [01] [c0] [43] [2f] [c4] [e1] [d0] [e0] [32] [e0] [11] [b3] [14] [61] [94] [9a] [11] [bb] [02] [b3] [20] [e4] [14] [e1] [5f] [93] [01] [27] [56] [e0] [02] [bb] [27] [95] [20] [f4] [51] [50] [21] [f4] [22] [0f] [f9] [cf] [01] [27] [56] [e0] [00] [00] [3b] [5a] [02] [bb] 
+####avrdude: usbasp_program_paged_load("flash", 0x500, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x00, 0x05, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x00, 0x05, 0x00, 0x00)
+         <= [d0] [f2] [27] [95] [28] [f4] [51] [50] [29] [f4] [22] [0f] [00] [00] [f9] [cf] [01] [27] [56] [e0] [27] [95] [02] [bb] [20] [f4] [51] [50] [21] [f4] [22] [0f] [f9] [cf] [01] [27] [56] [e0] [29] [91] [33] [23] [02] [bb] [21] [f6] [0b] [7e] [10] [91] [74] [00] [11] [0f] [c6] [51] [d0] [40] [02] [bb] [11] [f0] [10] [93] [6d] [00] [10] [e4] [1a] [bf] [00] [61] [11] [b3] [1b] [7e] [40] [2f] [4b] [7e] [5f] [91] [00] [c0] [00] [c0] [02] [bb] [11] [bb] [42] [bb] [7c] [cf] [88] [e1] [9e] [e0] [0f] [b6] [f8] [94] [a8] [95] [81] [bd] [0f] [be] [91] [bd] [8f] [9a] [8c] [9a] [a8] [95] [2f] [eb] [87] [e2] [99] [e0] [21] [50] [80] [40] [90] [40] 
+####avrdude: usbasp_program_paged_load("flash", 0x580, 128)
+avrdude: usbasp_transmit("USBASP_FUNC_SETLONGADDRESS", 0x80, 0x05, 0x00, 0x00)
+avrdude: usbasp_transmit("USBASP_FUNC_READFLASH", 0x80, 0x05, 0x00, 0x00)
+         <= [e1] [f7] [00] [c0] [00] [00] [8c] [98] [0e] [94] [62] [01] [78] [94] [a8] [95] [0e] [94] [78] [00] [fc] [cf] [f8] [94] [ff] [cf] [ff] [5a] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] [ff] 
+##### | 100% 0.75s
+
+avrdude: avr_read(): skipping page 12: no interesting data
+avrdude: avr_read(): skipping page 13: no interesting data
+avrdude: avr_read(): skipping page 14: no interesting data
+avrdude: avr_read(): skipping page 15: no interesting data
+avrdude: avr_read(): skipping page 16: no interesting data
+avrdude: avr_read(): skipping page 17: no interesting data
+avrdude: avr_read(): skipping page 18: no interesting data
+avrdude: avr_read(): skipping page 19: no interesting data
+avrdude: avr_read(): skipping page 20: no interesting data
+avrdude: avr_read(): skipping page 21: no interesting data
+avrdude: avr_read(): skipping page 22: no interesting data
+avrdude: avr_read(): skipping page 23: no interesting data
+avrdude: avr_read(): skipping page 24: no interesting data
+avrdude: avr_read(): skipping page 25: no interesting data
+avrdude: avr_read(): skipping page 26: no interesting data
+avrdude: avr_read(): skipping page 27: no interesting data
+avrdude: avr_read(): skipping page 28: no interesting data
+avrdude: avr_read(): skipping page 29: no interesting data
+avrdude: avr_read(): skipping page 30: no interesting data
+avrdude: avr_read(): skipping page 31: no interesting data
+avrdude: avr_read(): skipping page 32: no interesting data
+avrdude: avr_read(): skipping page 33: no interesting data
+avrdude: avr_read(): skipping page 34: no interesting data
+avrdude: avr_read(): skipping page 35: no interesting data
+avrdude: avr_read(): skipping page 36: no interesting data
+avrdude: avr_read(): skipping page 37: no interesting data
+avrdude: avr_read(): skipping page 38: no interesting data
+avrdude: avr_read(): skipping page 39: no interesting data
+avrdude: avr_read(): skipping page 40: no interesting data
+avrdude: avr_read(): skipping page 41: no interesting data
+avrdude: avr_read(): skipping page 42: no interesting data
+avrdude: avr_read(): skipping page 43: no interesting data
+avrdude: avr_read(): skipping page 44: no interesting data
+avrdude: avr_read(): skipping page 45: no interesting data
+avrdude: avr_read(): skipping page 46: no interesting data
+avrdude: avr_read(): skipping page 47: no interesting data
+avrdude: avr_read(): skipping page 48: no interesting data
+avrdude: avr_read(): skipping page 49: no interesting data
+avrdude: avr_read(): skipping page 50: no interesting data
+avrdude: avr_read(): skipping page 51: no interesting data
+avrdude: avr_read(): skipping page 52: no interesting data
+avrdude: avr_read(): skipping page 53: no interesting data
+avrdude: avr_read(): skipping page 54: no interesting data
+avrdude: avr_read(): skipping page 55: no interesting data
+avrdude: avr_read(): skipping page 56: no interesting data
+avrdude: avr_read(): skipping page 57: no interesting data
+avrdude: avr_read(): skipping page 58: no interesting data
+avrdude: avr_read(): skipping page 59: no interesting data
+avrdude: avr_read(): skipping page 60: no interesting data
+avrdude: avr_read(): skipping page 61: no interesting data
+avrdude: avr_read(): skipping page 62: no interesting data
+avrdude: avr_read(): skipping page 63: no interesting data
+avrdude: avr_read(): skipping page 64: no interesting data
+avrdude: avr_read(): skipping page 65: no interesting data
+avrdude: avr_read(): skipping page 66: no interesting data
+avrdude: avr_read(): skipping page 67: no interesting data
+avrdude: avr_read(): skipping page 68: no interesting data
+avrdude: avr_read(): skipping page 69: no interesting data
+avrdude: avr_read(): skipping page 70: no interesting data
+avrdude: avr_read(): skipping page 71: no interesting data
+avrdude: avr_read(): skipping page 72: no interesting data
+avrdude: avr_read(): skipping page 73: no interesting data
+avrdude: avr_read(): skipping page 74: no interesting data
+avrdude: avr_read(): skipping page 75: no interesting data
+avrdude: avr_read(): skipping page 76: no interesting data
+avrdude: avr_read(): skipping page 77: no interesting data
+avrdude: avr_read(): skipping page 78: no interesting data
+avrdude: avr_read(): skipping page 79: no interesting data
+avrdude: avr_read(): skipping page 80: no interesting data
+avrdude: avr_read(): skipping page 81: no interesting data
+avrdude: avr_read(): skipping page 82: no interesting data
+avrdude: avr_read(): skipping page 83: no interesting data
+avrdude: avr_read(): skipping page 84: no interesting data
+avrdude: avr_read(): skipping page 85: no interesting data
+avrdude: avr_read(): skipping page 86: no interesting data
+avrdude: avr_read(): skipping page 87: no interesting data
+avrdude: avr_read(): skipping page 88: no interesting data
+avrdude: avr_read(): skipping page 89: no interesting data
+avrdude: avr_read(): skipping page 90: no interesting data
+avrdude: avr_read(): skipping page 91: no interesting data
+avrdude: avr_read(): skipping page 92: no interesting data
+avrdude: avr_read(): skipping page 93: no interesting data
+avrdude: avr_read(): skipping page 94: no interesting data
+avrdude: avr_read(): skipping page 95: no interesting data
+avrdude: avr_read(): skipping page 96: no interesting data
+avrdude: avr_read(): skipping page 97: no interesting data
+avrdude: avr_read(): skipping page 98: no interesting data
+avrdude: avr_read(): skipping page 99: no interesting data
+avrdude: avr_read(): skipping page 100: no interesting data
+avrdude: avr_read(): skipping page 101: no interesting data
+avrdude: avr_read(): skipping page 102: no interesting data
+avrdude: avr_read(): skipping page 103: no interesting data
+avrdude: avr_read(): skipping page 104: no interesting data
+avrdude: avr_read(): skipping page 105: no interesting data
+avrdude: avr_read(): skipping page 106: no interesting data
+avrdude: avr_read(): skipping page 107: no interesting data
+avrdude: avr_read(): skipping page 108: no interesting data
+avrdude: avr_read(): skipping page 109: no interesting data
+avrdude: avr_read(): skipping page 110: no interesting data
+avrdude: avr_read(): skipping page 111: no interesting data
+avrdude: avr_read(): skipping page 112: no interesting data
+avrdude: avr_read(): skipping page 113: no interesting data
+avrdude: avr_read(): skipping page 114: no interesting data
+avrdude: avr_read(): skipping page 115: no interesting data
+avrdude: avr_read(): skipping page 116: no interesting data
+avrdude: avr_read(): skipping page 117: no interesting data
+avrdude: avr_read(): skipping page 118: no interesting data
+avrdude: avr_read(): skipping page 119: no interesting data
+avrdude: avr_read(): skipping page 120: no interesting data
+avrdude: avr_read(): skipping page 121: no interesting data
+avrdude: avr_read(): skipping page 122: no interesting data
+avrdude: avr_read(): skipping page 123: no interesting data
+avrdude: avr_read(): skipping page 124: no interesting data
+avrdude: avr_read(): skipping page 125: no interesting data
+avrdude: avr_read(): skipping page 126: no interesting data
+avrdude: avr_read(): skipping page 127: no interesting data
+avrdude: verifying ...
+avrdude: 1436 bytes of flash verified
+
+avrdude: usbasp_spi_cmd(0x50, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x50, 0x00, 0x00, 0x00)
+         <= [00] [50] [00] [ef] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x50, 0x00, 0xef
+avrdude: safemode read 1, lfuse value: ef
+avrdude: usbasp_spi_cmd(0x50, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x50, 0x00, 0x00, 0x00)
+         <= [00] [50] [00] [ef] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x50, 0x00, 0xef
+avrdude: safemode read 2, lfuse value: ef
+avrdude: usbasp_spi_cmd(0x50, 0x00, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x50, 0x00, 0x00, 0x00)
+         <= [00] [50] [00] [ef] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x50, 0x00, 0xef
+avrdude: safemode read 3, lfuse value: ef
+avrdude: safemode: lfuse reads as EF
+avrdude: usbasp_spi_cmd(0x58, 0x08, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x58, 0x08, 0x00, 0x00)
+         <= [00] [58] [08] [d9] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x58, 0x08, 0xd9
+avrdude: safemode read 1, hfuse value: d9
+avrdude: usbasp_spi_cmd(0x58, 0x08, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x58, 0x08, 0x00, 0x00)
+         <= [00] [58] [08] [d9] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x58, 0x08, 0xd9
+avrdude: safemode read 2, hfuse value: d9
+avrdude: usbasp_spi_cmd(0x58, 0x08, 0x00, 0x00)...
+avrdude: usbasp_transmit("USBASP_FUNC_TRANSMIT", 0x58, 0x08, 0x00, 0x00)
+         <= [00] [58] [08] [d9] 
+avrdude: usbasp_spi_cmd() => 0x00, 0x58, 0x08, 0xd9
+avrdude: safemode read 3, hfuse value: d9
+avrdude: safemode: hfuse reads as D9
+avrdude: safemode: Fuses OK (E:FF, H:D9, L:EF)
+avrdude: usbasp_close()
+avrdude: usbasp_transmit("USBASP_FUNC_DISCONNECT", 0x00, 0x00, 0x00, 0x00)
+
+avrdude done.  Thank you.
+
