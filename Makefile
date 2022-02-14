@@ -13,8 +13,8 @@ CC = avr-gcc
 CXX = avr-g++
 
 # preprocess & compile flags
-CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU) -DDEBUG_LEVEL=3
-CFLAGS = -mmcu=$(MCU) -Wall -Wextra -Werror -Wno-error=cpp -Os
+CPPFLAGS = $(addprefix -I, $(LIBPATH)) -DF_CPU=$(F_CPU) -DATPR_DBGEN
+CFLAGS = -mmcu=$(MCU) -lm -Os -Wall -Wextra -Werror
 
 # outputs
 OUT_DIR = build
@@ -35,10 +35,10 @@ check:
 	@cppcheck -Iinclude --std=c++11 --platform=avr8 src
 
 $(OUT_DIR)/%.o: %.cpp
-	$(CXX) $(CPPFLAGS) $(CFLAGS) -std=c++11 -c $< -o $@
+	$(CXX) $(CPPFLAGS) $(CFLAGS) -std=c++17 -c $< -o $@
 
 $(OUT_DIR)/%.o: %.c
-	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+	$(CC) $(CPPFLAGS) $(CFLAGS) -std=c17 -c $< -o $@
 
 $(OUT_DIR)/%.o: %.S
 	$(CC) $(CPPFLAGS) $(CFLAGS) -x assembler-with-cpp -c $< -o $@
