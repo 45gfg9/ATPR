@@ -33,6 +33,8 @@ static void usbReset() {
 int main() {
   wdt_enable(WDTO_1S);
 
+  DDRD = _BV(PD3);
+
   usbReset();
 
   usbInit();
