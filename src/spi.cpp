@@ -22,14 +22,6 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-// Pins for ATmega16A
-#define SPI_DDR DDRB
-#define SPI_IN PINB
-#define SPI_OUT PORTB
-#define SPI_MOSI PB5
-#define SPI_MISO PB6
-#define SPI_SCK PB7
-
 uint8_t spi::delayClock;
 
 uint8_t resetTarget() {

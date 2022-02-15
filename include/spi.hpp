@@ -22,6 +22,14 @@
 
 #include <stdint.h>
 
+// Pins for ATmega16A
+#define SPI_DDR DDRB
+#define SPI_IN PINB
+#define SPI_OUT PORTB
+#define SPI_MOSI PB5
+#define SPI_MISO PB6
+#define SPI_SCK PB7
+
 namespace spi {
   extern uint8_t delayClock;
   extern uint8_t (*transfer)(uint8_t);
