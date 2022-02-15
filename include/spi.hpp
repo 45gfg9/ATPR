@@ -15,26 +15,23 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef __ATPR_HPP__
-#define __ATPR_HPP__
+// SPI related functions.
 
-#include <stdlib.h>
+#ifndef __ATPR_SPI_HPP__
+#define __ATPR_SPI_HPP__
+
 #include <stdint.h>
 
-#include "debug.hpp"
-#include "parts.hpp"
-#include "spi.hpp"
+namespace spi {
+  extern uint8_t delayClock;
+  extern uint8_t (*transfer)(uint8_t);
 
-#define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
-#define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+  uint8_t swTransfer(uint8_t);
+  uint8_t hwTransfer(uint8_t);
 
-extern uint32_t address;
-extern uint16_t pageSize;
-extern uint16_t nBytes;
+  void setup();
 
-extern "C" {
-// include v-usb headers
-#include "usbdrv.h"
-}
+  void delay();
+} // namespace spi
 
 #endif
