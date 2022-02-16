@@ -25,12 +25,17 @@
 #include "parts.hpp"
 #include "spi.hpp"
 
+#include "isp.hpp"
+
 #define set_bit(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
 #define clear_bit(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
 
-extern uint32_t address;
-extern uint16_t pageSize;
-extern uint16_t nBytes;
+using protocolHandler = uint8_t (*)(uint8_t *, uint8_t);
+
+enum class protocol : uint8_t {
+  isp,
+  none,
+};
 
 extern "C" {
 // include v-usb headers
