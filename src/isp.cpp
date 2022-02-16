@@ -33,7 +33,7 @@
     clear_bit(PORTD, PD0); \
   } while (0)
 
-uint8_t (*isp::transfer)(uint8_t) = spi::hwTransfer;
+uint8_t (*isp::transfer)(uint8_t);
 
 void isp::connect() {
   SPI_DDR |= _BV(SPI_MOSI) | _BV(SPI_SCK);
@@ -97,9 +97,15 @@ void isp::setSpiOpt(uint8_t option) {
       set_bit(SPCR, SPR1);
     if (option & _BV(0))
       set_bit(SPCR, SPR0);
+
+    isp::transfer = spi::hwTransfer;
   } else {
     // use software SPI
-    // TODO
+
+    uint8_t exp = option & 0x7;
+    spi::delayClock = 1 << exp;
+
+    isp::transfer = spi::swTransfer;
   }
 }
 
