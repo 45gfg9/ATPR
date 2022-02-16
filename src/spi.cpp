@@ -22,12 +22,11 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-// TODO
 uint8_t spi::delayClock;
 
 static void swDelay() {
   const uint8_t start = TCNT0;
-  while (TCNT0 - start < spi::delayClock)
+  while ((uint8_t)(TCNT0 - start) < spi::delayClock)
     ;
 }
 
