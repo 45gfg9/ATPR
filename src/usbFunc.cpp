@@ -41,7 +41,7 @@ protocol currentProtocol = protocol::none;
 // see declarations for impl notes
 usbMsgLen_t usbFunctionSetup(uint8_t data[8]) {
   if (currentProtocol == protocol::none) {
-    uint8_t nextProtocol = data[1];
+    const uint8_t &nextProtocol = data[1];
     if (nextProtocol == 0xFF) {
       // info check
       data[1] = data[2];
@@ -53,7 +53,6 @@ usbMsgLen_t usbFunctionSetup(uint8_t data[8]) {
       return 4;
     } else {
       // setup packet
-      // TODO
       currentProtocol = (protocol)nextProtocol;
 
       clear_bit(DDRD, PD3); // clear Idling

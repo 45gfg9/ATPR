@@ -58,12 +58,16 @@ void isp::connect() {
 }
 
 void isp::close() {
-  SPI_DDR &= ~(_BV(SPI_MOSI) | _BV(SPI_SCK));
   resetHigh();
 
-  // Disable SPI, reset settings
-  SPSR = 0;
-  SPCR = 0;
+  if (transfer == spi::hwTransfer) {
+    SPI_DDR &= ~(_BV(SPI_MOSI) | _BV(SPI_SCK));
+    clear_bit(SPI_OUT, SPI_SS); // was pullup
+
+    // Disable SPI, reset settings
+    SPSR = 0;
+    SPCR = 0;
+  }
 }
 
 bool isp::begin() {
@@ -122,9 +126,10 @@ uint8_t isp::handler(uint8_t *data, uint8_t len) {
 
       connect();
       data[1] = begin();
+      data[2] = spi::delayClock;
 
       usbMsgPtr = data + 1;
-      return 1;
+      return 2;
     } else if (op == TRANSMIT) {
       data[2] = transfer(data[2]);
       data[3] = transfer(data[3]);
