@@ -24,7 +24,7 @@
 
 uint8_t spi::delayClock;
 
-static void swDelay() {
+void spi::swDelay() {
   const uint8_t start = TCNT0;
   while ((uint8_t)(TCNT0 - start) < spi::delayClock)
     ;
@@ -34,18 +34,18 @@ uint8_t spi::swTransfer(uint8_t send_byte) {
   uint8_t recv_byte = 0;
   for (uint8_t i = 8; i; --i) {
     // MSBFIRST
-    if (send_byte & 0x80) {
+    if (send_byte & 0x80)
       set_bit(SPI_OUT, SPI_MOSI);
-    } else {
+    else
       clear_bit(SPI_OUT, SPI_MOSI);
-    }
+
     // shift to next bit
     send_byte <<= 1;
 
     // receive data
     recv_byte <<= 1;
     if (bit_is_set(SPI_IN, SPI_MISO))
-      recv_byte++;
+      recv_byte |= 1;
 
     // pulse SCK
     set_bit(SPI_OUT, SPI_SCK);

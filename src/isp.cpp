@@ -19,7 +19,6 @@
 #include <util/delay.h>
 
 // ISP protocol implementations
-// TODO: replace _delay_us() usage?
 
 #define _wrappedSetPin()
 
@@ -37,20 +36,22 @@ uint8_t (*isp::transfer)(uint8_t);
 
 void isp::connect() {
   SPI_DDR |= _BV(SPI_MOSI) | _BV(SPI_SCK);
-  set_bit(DDRD, PD0);       // Reset pin out
-  set_bit(SPI_OUT, SPI_SS); // SS pullup
+  set_bit(DDRD, PD0); // Reset pin out
 
   // SCK and RST low
   clear_bit(SPI_OUT, SPI_SCK);
   resetLow();
 
-  // Enable SPI, Master mode
-  SPCR |= _BV(SPE) | _BV(MSTR);
+  if (transfer == spi::hwTransfer) {
+    // Enable SPI, Master mode
+    set_bit(SPI_OUT, SPI_SS); // SS pullup
+    SPCR |= _BV(SPE) | _BV(MSTR);
+  }
 
   // Positive pulse
-  _delay_us(4);
+  spi::swDelay();
   resetHigh();
-  _delay_us(4);
+  spi::swDelay();
   resetLow();
 
   _delay_ms(25);
@@ -78,9 +79,9 @@ bool isp::begin() {
 
     // Failed attempt, retrying
     resetHigh();
-    _delay_us(4);
+    spi::swDelay();
     resetLow();
-    _delay_us(4);
+    spi::swDelay();
   }
   return false;
 }
@@ -98,12 +99,13 @@ void isp::setSpiOpt(uint8_t option) {
     if (option & _BV(0))
       set_bit(SPCR, SPR0);
 
+    spi::delayClock = 1;
     transfer = spi::hwTransfer;
   } else {
     // use software SPI
 
-    uint8_t exp = option & 0x7;
-    spi::delayClock = 1 << exp;
+    uint8_t exp = option & 0x07;
+    spi::delayClock = 1U << exp;
 
     transfer = spi::swTransfer;
   }

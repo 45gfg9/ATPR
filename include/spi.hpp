@@ -34,6 +34,8 @@
 namespace spi {
   extern uint8_t delayClock;
 
+  void swDelay();
+
   uint8_t swTransfer(uint8_t);
   uint8_t hwTransfer(uint8_t);
 } // namespace spi
