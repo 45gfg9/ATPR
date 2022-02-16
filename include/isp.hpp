@@ -36,11 +36,11 @@ namespace isp {
   // Prepare connection to target device
   void connect();
 
-  // Close connection to target device
-  void disconnect();
-
   // Enter programming mode, true on success
   bool begin();
+
+  // Close connection to target device
+  void close();
 
   // read byte from flash at given address
   uint8_t readFlash(unsigned long address);

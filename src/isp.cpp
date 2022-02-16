@@ -56,7 +56,7 @@ void isp::connect() {
   _delay_ms(25);
 }
 
-void isp::disconnect() {
+void isp::close() {
   SPI_DDR &= ~(_BV(SPI_MOSI) | _BV(SPI_SCK));
   resetHigh();
 
@@ -132,7 +132,7 @@ uint8_t isp::handler(uint8_t *data, uint8_t len) {
       usbMsgPtr = data + 2;
       return 4;
     } else if (op == END) {
-      isp::disconnect();
+      isp::close();
 
       usbMsgPtr = data + 1;
       return 1;
