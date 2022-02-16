@@ -30,10 +30,25 @@ static void usbReset() {
   usbDeviceConnect();
 }
 
+// PD3 Idle LED
+// PD5 Operate LED
+
 int main() {
   wdt_enable(WDTO_1S);
 
   DDRD = _BV(PD3);
+
+  // Port C all output
+  DDRC = 0xFF;
+
+  // Timer 0 prescaler: 256 (16MHz / 256 = 62.5KHz)
+  TCCR0 |= _BV(CS02);
+
+  // ADC setup
+  // Internal 2.56V ref, PA7 channel
+  // ADC prescaler: 128 (16MHz / 128 = 125KHz)
+  ADMUX = 0b11000111;
+  ADCSRA = 0b00000111;
 
   usbReset();
 
