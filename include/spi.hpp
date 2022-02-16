@@ -26,20 +26,16 @@
 #define SPI_DDR DDRB
 #define SPI_IN PINB
 #define SPI_OUT PORTB
+#define SPI_SS PB4
 #define SPI_MOSI PB5
 #define SPI_MISO PB6
 #define SPI_SCK PB7
 
 namespace spi {
   extern uint8_t delayClock;
-  extern uint8_t (*transfer)(uint8_t);
 
   uint8_t swTransfer(uint8_t);
   uint8_t hwTransfer(uint8_t);
-
-  void setup();
-
-  void delay();
 } // namespace spi
 
 #endif

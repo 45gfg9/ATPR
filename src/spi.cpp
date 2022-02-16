@@ -22,21 +22,18 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
+// TODO
 uint8_t spi::delayClock;
 
-uint8_t resetTarget() {
-  return 0;
-}
-
-void spi::delay() {
+static void swDelay() {
   const uint8_t start = TCNT0;
-  while (TCNT0 - start < delayClock)
+  while (TCNT0 - start < spi::delayClock)
     ;
 }
 
 uint8_t spi::swTransfer(uint8_t send_byte) {
   uint8_t recv_byte = 0;
-  for (uint8_t i = 8; i; i--) {
+  for (uint8_t i = 8; i; --i) {
     // MSBFIRST
     if (send_byte & 0x80) {
       set_bit(SPI_OUT, SPI_MOSI);
@@ -48,15 +45,14 @@ uint8_t spi::swTransfer(uint8_t send_byte) {
 
     // receive data
     recv_byte <<= 1;
-    if (bit_is_set(SPI_IN, SPI_MISO)) {
+    if (bit_is_set(SPI_IN, SPI_MISO))
       recv_byte++;
-    }
 
     // pulse SCK
     set_bit(SPI_OUT, SPI_SCK);
-    delay();
+    swDelay();
     clear_bit(SPI_OUT, SPI_SCK);
-    delay();
+    swDelay();
   }
 
   return recv_byte;
