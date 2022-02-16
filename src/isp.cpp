@@ -98,14 +98,14 @@ void isp::setSpiOpt(uint8_t option) {
     if (option & _BV(0))
       set_bit(SPCR, SPR0);
 
-    isp::transfer = spi::hwTransfer;
+    transfer = spi::hwTransfer;
   } else {
     // use software SPI
 
     uint8_t exp = option & 0x7;
     spi::delayClock = 1 << exp;
 
-    isp::transfer = spi::swTransfer;
+    transfer = spi::swTransfer;
   }
 }
 
@@ -132,7 +132,7 @@ uint8_t isp::handler(uint8_t *data, uint8_t len) {
       usbMsgPtr = data + 2;
       return 4;
     } else if (op == END) {
-      isp::close();
+      close();
 
       usbMsgPtr = data + 1;
       return 1;
